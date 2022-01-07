@@ -17,7 +17,7 @@ for (let i = 0; i < links.length; i++ )
     let link = document.createElement('a');
     
     link.textContent = '' + links[i].label;
-    link.setAttribute('src', links[i].url)
+    link.setAttribute('href', links[i].url)
     
     entry.appendChild(link);
 
