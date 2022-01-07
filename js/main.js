@@ -11,7 +11,7 @@ const links = [
 
 function makeList(){
 
-for (let i = 0; i < commerce.length; i++ ) 
+for (let i = 0; i < links.length; i++ ) 
   {
     let entry = document.createElement('li');
     let link = document.createElement('a');
