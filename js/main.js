@@ -16,7 +16,7 @@ for (let i = 0; i < commerce.length; i++ )
     let entry = document.createElement('li');
     let link = document.createElement('a');
     
-    link.textContent = links[i].label;
+    link.textContent = '' + links[i].label;
     link.setAttribute('src', links[i].url)
     
     entry.appendChild(link);
