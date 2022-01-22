@@ -60,20 +60,21 @@
                     let headCell = document.createElement("th");
                     headCell.appendChild(document.createTextNode(field));
                     headRow.appendChild(headCell);
-                });
+                    });
                 table.appendChild(headRow);
 
                 //Iterates through and creates each row for each subsequent entry in the array
                 data.forEach(function(object) {
-                let row = document.createElement("tr");
-                fields.forEach(function(field) {
+                    let row = document.createElement("tr");
+                    fields.forEach(function(field) {
                     let cell = document.createElement("td");
                     cell.appendChild(document.createTextNode(object[field]));
                     if (typeof object[field] == "number") {
                         cell.style.textAlign = "right";
                     }
                     row.appendChild(cell);
-                 });
+                });
+
                  table.appendChild(row);
                 });
 
