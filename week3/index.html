@@ -10,13 +10,32 @@
     <body>
         
         <div style="width:800px; margin: auto;">
+        <h1>Week 3 Notes and Examples</h1>
 
-            <div id="mountains"></div>
+        <p>To create an object literal, simply enter a pair of curly braces. The ability to create objects with computed property keys was introduced in ES6. This means that JavaScript code can be placed inside square brackets and the property key will be the return value of that code. </p>
+        <p>New properties and methods can be added to objects at any time in a program. This is done by simply assigning a value to the new property.</p>
+        <p>An object literal can be passed as a parameter to a function. This is useful when there are a large number of parameters, as it allows the arguments to be provided by name and in any order. This means you don't have to remember the order to enter them when invoking a function.</p>
+        
+        <h3>Table creation with JavaScript</h3>
+        <div id="mountains"></div>
+
+
+        <h3>Tab creation with JavaScript</h3>
+        <h5>Note: added the notes from the beginning to see how they handle the capacity (Essentially used as filler instead of lorem ipsum)</h5>
+        <tab-panel>
+            <div data-tabname="one"><p>To create an object literal, simply enter a pair of curly braces. The ability to create objects with computed property keys was introduced in ES6. This means that JavaScript code can be placed inside square brackets and the property key will be the return value of that code. </p></div>
+            <div data-tabname="two"><p>New properties and methods can be added to objects at any time in a program. This is done by simply assigning a value to the new property.</p></div>
+            <div data-tabname="three"><p>An object literal can be passed as a parameter to a function. This is useful when there are a large number of parameters, as it allows the arguments to be provided by name and in any order. This means you don't have to remember the order to enter them when invoking a function.</p>
+            </div>
+          </tab-panel>
+
+
        </div>
     </body>
     
     <footer>
         <script>
+            //Mountain list
             const MOUNTAINS = [
               {name: "Kilimanjaro", height: 5895, place: "Tanzania"},
               {name: "Everest", height: 8848, place: "Nepal"},
@@ -64,6 +83,37 @@
             document.querySelector("#mountains").appendChild(tableBuilder(MOUNTAINS));
 
             
+
+
+            ///Tab area
+
+            //Creat the physical tabs and make them run Select Tab when clicked.
+    function asTabs(node) {
+        let tabs = Array.from(node.children).map(node => {
+        let button = document.createElement("button");
+        button.textContent = node.getAttribute("data-tabname");
+        let tab = {node, button};
+        button.addEventListener("click", () => selectTab(tab));
+        return tab;
+    });
+
+    //Puts tabs into a div
+    let tabList = document.createElement("div");
+    for (let {button} of tabs) tabList.appendChild(button);
+    node.insertBefore(tabList, node.firstChild);
+
+    //Selects a tab and styles them in a way to let you know they are 
+    function selectTab(selectedTab) {
+      for (let tab of tabs) {
+        let selected = tab == selectedTab;
+        tab.node.style.display = selected ? "" : "none";
+        tab.button.style.color = selected ? "blue" : "";
+      }
+    }
+    selectTab(tabs[0]);
+  }
+
+  asTabs(document.querySelector("tab-panel"));
 
           </script>
     </footer>   
