@@ -3,14 +3,22 @@
     <head>
         <meta charset="utf-8">
         <title>Week 3</title>
+        <link rel="stylesheet" href="../styles.css">
+        <script src="../js/menu.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
+        
         
         
     </head>
 
-    <body>
+    <body onload="makeList()">
         
-        <div style="width:800px; margin: auto;">
+      <div class="main-container">
         <h1>Week 3 Notes and Examples</h1>
+        <h2>Menu</h2>
+        <ol id="dynamicLinkList"></ol>
 
         <p>To create an object literal, simply enter a pair of curly braces. The ability to create objects with computed property keys was introduced in ES6. This means that JavaScript code can be placed inside square brackets and the property key will be the return value of that code. </p>
         <p>New properties and methods can be added to objects at any time in a program. This is done by simply assigning a value to the new property.</p>

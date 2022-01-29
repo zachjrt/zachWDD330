@@ -1,10 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap');
+
 body {
-    background-color: #CAD8DE;
+    background-color: #0b462d;
     font-family: Arial, sans-serif;
 }
 
 h1{
+    background-color: #116142;
+    color: white;
+    font-family: 'Supermercado One', cursive;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+   
+}
+h2{
     background-color: #645853;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Supermercado One', cursive;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 3px;
+}
+h3{
+    background-color: #645853;
+    color: white;
+    font-family: 'Supermercado One', cursive;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 3px;
+}
+.square {
+    /* Disables Selection */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; 
+}
+.main-container{
+    width:800px; 
+    margin: auto;
+    background-color: rgb(199, 218, 191);
+    color: rgb(2, 27, 20);
+    padding: 20px;
 }

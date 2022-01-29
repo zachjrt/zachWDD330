@@ -3,16 +3,24 @@
     <head>
         <meta charset="utf-8">
         <title>Week 2 Team Activity</title>
+        <link rel="stylesheet" href="../styles.css">
+        <script src="../js/menu.js"></script>
         <script src="js/main.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
+        
     </head>
 
-    <body>
+    <body onload="makeList()">
         
-        <div style="width:800px; margin: auto;">
+        <div class="main-container">
             <h1>Week 2 notes</h1>
-        <h4>
+            <h2>Menu</h2>
+            <ol id="dynamicLinkList"></ol>
+        <h3>
             What is the point of using arrow functions?
-        </h4>
+        </h3>
 
             <p>
 Don’t use:
