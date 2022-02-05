@@ -42,7 +42,7 @@
             
 
             <h3>Questions</h3>
-            <h4>What does "for (;;) {}" do? I tried one of the code exercises and I got it working partially. But when the multiplication would fail (80% of the time, I understand what's happening there), it would return undefined. But checking the example code "for(;;){}" fixed that all. I'm sure I missed it somewhere, but I'm having difficulty finding the information on that.</h4>
+            <h4>What does "for (;;) {}" do? I tried one of the code exercises and I got it working partially. But when the multiplication would fail (80% of the time, I understand what's happening there), it would return undefined. But checking the example code "for(;;){}" fixed that all. I'm sure I missed it somewhere, but I'm having difficulty finding the information on that. I think that the for (;;) is a for loop just without parameters, but why does that run and why does that help here?</h4>
             
            
             
@@ -65,7 +65,7 @@
         function reliableMultiply(a, b) {
 
             //Had to look at the example for this for(;;)
-            //for (;;) {
+            for (;;) {
                 'use strict';
                 try {
                 return primitiveMultiply(a, b);
@@ -74,7 +74,7 @@
                 if (!(x instanceof MultiplicatorUnitFailure))
                     throw x;
                 }
-            //}
+            }
         }
 
         
