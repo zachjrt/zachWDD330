@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Week 4</title>
+        <link rel="stylesheet" href="../styles.css">
+        <script src="../js/menu.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
+        
+    </head>
+
+    <body onload="makeList()">
+        
+        <div class="main-container">
+            <h1>Week 4</h1>
+            <h2>Menu</h2>
+            <ol id="dynamicLinkList"></ol>
+
+            <h3>Script Exercise</h3>
+           
+            <p>Check the console: I'm leaving it partially broken on purpose So that I'll have a reminder of my question from this week. I might come back and fix it later after I understand better.</p>
+            
+
+
+            <h3>Notes</h3>
+            <p>System error ― there’s a problem with the system or external devices with which the program is interacting.</p>
+            <p>Programmer error ― the program contains incorrect syntax or faulty logic; it could even be as simple as a typo.</p>
+            <p>User error ― the user has entered data incorrectly, which the program is unable to handle.</p>
+            <p></p>
+            <p>As programmers, we often have little influence over how external systems work, so it can be difficult to fix the root cause of system errors. Despite this, we should still be aware of them and attempt to reduce their impact by working around any problems they cause. </p>
+            <p>An exception is an error that produces a return value that can then be used by the program to deal with the error.</p>
+            <p>An exception will also produce a stack trace. This is a sequence of functions or method calls that lead to the point where the error occurred. </p>
+            <p>A warning can occur if there’s an error in the code that isn't enough to cause the program to crash. This means the program will continue to run after a warning. This might sound good, but it can be problematic, since the issue that produced the warning may cause the program to continue running incorrectly.</p>
+            <p>JavaScript is a fairly forgiving language when it comes to errors; it didn’t implement exceptions at all until ECMAScript version 3. Instead of alerting a user to an error in a program, it just failed silently in the background, and this is sometimes still the case. </p>
+            <p>ECMAScript 5 introduced a strict mode that produces more exceptions and warnings and prohibits the use of some deprecated features. This is due to the fact that strict mode considers coding practices that were previously accepted as just being 'poor style' as actual errors.</p>
+            <p>Linting tools such as JS Lint,JS Hint, and ES Lint can be used to test the quality of JavaScript code, beyond simply using strict mode. They are designed to highlight any sloppy programming practices or syntax errors, and will complain if certain style conventions are not followed, such as how code is indented.</p>
+            <p>Most modern browsers also have a debugging tool that allows you to set breakpoints in your code that will pause it at certain points. </p>
+            <p>An error object can be created by the host environment when an exception occurs, or it can be created in the code using a constructor function</p>
+            <p>Test-driven development (TDD) is the process of writing tests before any actual code. Obviously these tests will initially fail, because there is no code to test. </p>
+            
+
+            <h3>Questions</h3>
+            <h4>What does "for (;;) {}" do? I tried one of the code exercises and I got it working partially. But when the multiplication would fail (80%) of the time (I understand what's happening there), it would return undefined. But checking the example code "for(;;){}" fixed that all. I'm sure I missed it somewhere, but I'm having difficulty finding the information on that.</h4>
+            
+           
+            
+        </div>
+    </body>
+    
+    <footer>
+        <script>
+        
+        class MultiplicatorUnitFailure extends Error {}
+
+        function primitiveMultiply(a, b) {
+            if (Math.random() < 0.2) {
+                return a * b;
+            } else {
+                throw new MultiplicatorUnitFailure("Klunk");
+                }
+            }
+
+        function reliableMultiply(a, b) {
+
+            //Had to look at the example for this for(;;)
+            //for (;;) {
+                'use strict';
+                try {
+                return primitiveMultiply(a, b);
+                } 
+                catch (x) {
+                if (!(x instanceof MultiplicatorUnitFailure))
+                    throw x;
+                }
+            //}
+        }
+
+        
+
+        //Causes errors and won't run the multiplication afterwards if they aren't commented out
+        //console.log(primitiveMultiply(1, 2));
+        //console.log(primitiveMultiply(3, 4));
+        //console.log(primitiveMultiply(5, 6));
+        //console.log(primitiveMultiply(7, 8));
+        //console.log(primitiveMultiply(9, 10));
+
+        //Works 80% of the time without for(;;)
+        //Adding a lot to make this more clear
+        console.log(reliableMultiply(1, 2));
+        console.log(reliableMultiply(3, 4));
+        console.log(reliableMultiply(5, 6));
+        console.log(reliableMultiply(7, 8));
+        console.log(reliableMultiply(1, 2));
+        console.log(reliableMultiply(3, 4));
+        console.log(reliableMultiply(5, 6));
+        console.log(reliableMultiply(7, 8));
+        console.log(reliableMultiply(1, 2));
+        console.log(reliableMultiply(3, 4));
+        console.log(reliableMultiply(5, 6));
+        console.log(reliableMultiply(7, 8));
+        console.log(reliableMultiply(1, 2));
+        console.log(reliableMultiply(3, 4));
+        console.log(reliableMultiply(5, 6));
+        console.log(reliableMultiply(7, 8));
+        console.log(reliableMultiply(1, 2));
+        console.log(reliableMultiply(3, 4));
+        console.log(reliableMultiply(5, 6));
+        console.log(reliableMultiply(7, 8));
+        console.log(reliableMultiply(1, 2));
+        console.log(reliableMultiply(3, 4));
+        console.log(reliableMultiply(5, 6));
+        console.log(reliableMultiply(7, 8));
+        
+          </script>
+    </footer>   
+    </html>
