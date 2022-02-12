@@ -84,55 +84,55 @@ class TaskCreator{
         this.LocalStorage = new Storage();
         this.name = name;
         let temporarylist = JSON.parse(this.LocalStorage.load(this.name));
-        this.list = [];
+        this.listFull = [];
         temporarylist?.forEach(x => {
-            this.list.push(new Task(x.content,x.taskIndex,x.complete));
+            this.listFull.push(new Task(x.content,x.taskIndex,x.complete));
         })
         this.redrawList();
     }
 
     Uncompleted() {
         let count = 0;
-        this.list.forEach(x => count += x.complete ? 0 : 1);
+        this.listFull.forEach(x => count += x.complete ? 0 : 1);
         return count;
     }
 
     remove(task) {
         const index = this.list.indexOf(task);
         if (index > -1) {
-            this.list.splice(index, 1);
+            this.listFull.splice(index, 1);
         }
         this.redrawList();
         this.save();
     }
     add(name) {
         let task = new Task(name = name);
-        this.list.push(task);
+        this.listFull.push(task);
         document.getElementById('listTodo').appendChild(task.createElement(this.save.bind(this), this.remove.bind(this)));
         this.save();
     }
     save() {
-        this.LocalStorage.save(this.name, JSON.stringify(this.list));
+        this.LocalStorage.save(this.name, JSON.stringify(this.listFull));
         this.updateNum();
     }
   
     redrawList(filters){
         let container = document.getElementById("listTodo");
         container.textContent="";
-        if (this.list) {
-            this.list.forEach(x => {
+        if (this.listFull) {
+            this.listFull.forEach(i => {
                 switch (filters) {
                     case "Complete":
-                        if (x.complete) container.appendChild(x.createElement(this.save.bind(this), this.remove.bind(this)));
+                        if (i.complete) container.appendChild(i.createElement(this.save.bind(this), this.remove.bind(this)));
                         break;
                     case "Active":
-                        if (!x.complete) container.appendChild(x.createElement(this.save.bind(this), this.remove.bind(this)));
+                        if (!i.complete) container.appendChild(i.createElement(this.save.bind(this), this.remove.bind(this)));
                         break;
                     case "All":
-                        container.appendChild(x.createElement(this.save.bind(this), this.remove.bind(this)));
+                        container.appendChild(i.createElement(this.save.bind(this), this.remove.bind(this)));
                         break;
                     default:
-                        container.appendChild(x.createElement(this.save.bind(this), this.remove.bind(this)));
+                        container.appendChild(i.createElement(this.save.bind(this), this.remove.bind(this)));
                         break;
                 }
             });
