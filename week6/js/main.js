@@ -1,5 +1,5 @@
 
-
+import Storage from "./ls.js"
 
 class Task{
 
@@ -53,17 +53,7 @@ class Task{
     
 }
 
-class Storage {
-    constructor(storage = window.localStorage) {
-        this.storage = storage;
-    }
-    load(name) {
-        return this.storage.getItem(name);
-    }
-    save(name, info) {
-        this.storage.setItem(name, info);
-    }
-}
+
 
 
 class Handler{
@@ -164,13 +154,16 @@ let activeButton = document.getElementById("active")
 let completedButton = document.getElementById("completed")
 
 completedButton.addEventListener("click", () => {
-handler.Complete()
+    console.log("complete filter")
+    handler.Complete()
 })
 activeButton.addEventListener("click", () => {
-handler.Active()
+    console.log("active filter")
+    handler.Active()
 })
 allButton.addEventListener("click", () => {
-handler.All()
+    console.log("all filter")
+    handler.All()
 })
 
 document.getElementById("addTask").addEventListener("click", () => {
