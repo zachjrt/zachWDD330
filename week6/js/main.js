@@ -62,14 +62,14 @@ class Handler{
      }
 
     Complete() {
-        this.todoList.renderList("Complete")
+        this.todoList.redrawList("Complete")
     }
    
     All() {
-        this.todoList.renderList("All")
+        this.todoList.redrawList("All")
     }
     Active() {
-        this.todoList.renderList("Active")
+        this.todoList.redrawList("Active")
     }
     
     addTask(){
@@ -88,7 +88,7 @@ class TaskCreator{
         temporarylist?.forEach(x => {
             this.list.push(new Task(x.content,x.taskIndex,x.complete));
         })
-        this.renderList();
+        this.redrawList();
     }
 
     Uncompleted() {
@@ -102,7 +102,7 @@ class TaskCreator{
         if (index > -1) {
             this.list.splice(index, 1);
         }
-        this.renderList();
+        this.redrawList();
         this.save();
     }
     add(name) {
@@ -116,17 +116,17 @@ class TaskCreator{
         this.updateNum();
     }
   
-    renderList(filters){
+    redrawList(filters){
         let container = document.getElementById("listTodo");
         container.textContent="";
         if (this.list) {
             this.list.forEach(x => {
                 switch (filters) {
-                    case "Active":
-                        if (!x.complete) container.appendChild(x.createElement(this.save.bind(this), this.remove.bind(this)));
-                        break;
                     case "Complete":
                         if (x.complete) container.appendChild(x.createElement(this.save.bind(this), this.remove.bind(this)));
+                        break;
+                    case "Active":
+                        if (!x.complete) container.appendChild(x.createElement(this.save.bind(this), this.remove.bind(this)));
                         break;
                     case "All":
                         container.appendChild(x.createElement(this.save.bind(this), this.remove.bind(this)));
