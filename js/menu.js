@@ -21,7 +21,11 @@ const links = [
     },
     {
       label: "Week5 notes",
-      url: "week5/index.html"
+      url: "../week5/index.html"
+    },
+    {
+      label: "Week6 Todo",
+      url: "../week6/index.html"
     }
     
 ];

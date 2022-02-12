@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Week 6</title>
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="todo.css">
+        <script src="../js/menu.js"></script>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
+        
+    </head>
+
+    <body onload="makeList()">
+        
+        <div class="main-container">
+            <ol id="dynamicLinkList"></ol>
+         <div class="listGridContainer">
+             <h1 style="margin:auto;">Todos</h1>
+            <div class="listGridContainer" id="listTodo">
+                
+            </div>
+
+            <div class="listGridContainer" id="filters">
+                <button class="filter" id="left"><span id="remaining"></span> tasks left</button>
+                <button class="filter" id="all">All</button>
+                <button class="filter" id="active">Active</button>
+                <button class="filter" id="completed">Completed</button>
+            </div>
+
+            
+            <div class="listGridContainer" id="List">
+                <form style="width: 100%;">
+                    <input class="form" style="width:90%;" type="text" id="newTaskName">
+                    <button class="form" style="width:9%;" id="addTask">+</button>
+                </form>
+            </div>
+
+         </div>
+
+
+        </div>
+    </body>
+    
+    <footer>
+        <script src="main.js"></script>
+        
+        
+    </footer>   
+    </html>

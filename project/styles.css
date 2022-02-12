@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap');
+
+body {
+    background-color: #FEF8EB;
+    margin:0px;
+    font-family: 'Dosis', sans-serif;
+}
+
+h1{
+    background-color: #353B3C;
+    color: white;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+   
+}
+h2{
+    background-color: #645853;
+    color: white;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 3px;
+}
+h3{
+    background-color: #003249;
+    color: white;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 3px;
+}
+.square {
+    /* Disables Selection */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; 
+}
+.main-container{
+    width:800px; 
+    margin: auto;
+    background-color: #FDEBC4;
+    color: rgb(2, 27, 20);
+    padding: 20px;
+}
+
+/*#ADFCF9*/
+
+h1{
+    font-size: 2rem;
+    height: 9rem;
+    padding-top: 8rem;
+    text-align: center;
+}
+.slogan{
+    font-size: .7rem;
+}
+#currentweather {
+    padding: 0rem;
+}
+.logo {
+    width: 6em;
+    padding: 1rem;
+}
+.featured img{
+    width:100%;
+}
+.featured {
+    width:75%;
+    display: block;
+}
+nav ul{
+    display: block;
+}
+nav ul li{
+    width: 50%;
+    float: left;
+}
+#home {
+    width:100%
+}
+footer p{
+    margin: 0px;
+}
+section{
+    width:100%;
+}
+h3{
+    width:100%;
+}
+.citydescription img {
+    width:100%;
+    float:none;
+    padding:0px;
+}
+.citydescription div {
+    height: auto;
+}
+label{
+    width: 100%;
+}
+
+.sectionmap{
+    height: auto;
+  
+}
+input[type="submit"] {
+    width:auto;
+}
+.featuredEvents {
+    display:block;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+footer{
+    min-height: 105px;
+}
+.switchview{
+    display:none;
+}
+
+
+p{
+    font-family: 'Dosis', sans-serif;
+}
+div{
+    font-family: 'Dosis', sans-serif;
+}
+div p{
+    font-family: 'Dosis', sans-serif;
+}
+h1{
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    background-image: url(../images/banner.png);
+    background-size: cover;
+    width: 100%;
+    margin: 0;
+    font-size: 4rem;
+    height: 10rem;
+    padding-top: 3rem;
+}
+h3{
+    color: #fff;
+    background-color: #003249;
+    width: 95%;
+    margin:auto;
+    margin-top: 20px;
+    font-size: 2rem;
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0px -7px 9px rgba(45, 45, 45, 0.5)
+}
+footer{
+    color: #fff;
+    background-color: #021D27;
+    min-height: 120px;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+.logo{
+    width: 9em;
+    height: auto;
+    float: left;
+    padding: 2rem;
+  }
+  header{
+      padding: 0px;
+  }
+  #weather{
+    font-family: 'Dosis', sans-serif;
+      float:right;
+      color:#fff;
+      padding: 5rem;
+      padding-left: 0px;
+  }
+  #weather p{
+    line-height: 0px;
+}
+#weather h4{
+    margin-bottom: 0%;
+    line-height: 0px;
+}
+  #weather p{
+    line-height: 0px;
+}
+.slogan{
+    font-size: 2rem;
+}
+
+.active{
+    background-color: #5fa5a3;
+}
+nav ul {
+    display: flex;
+    margin: 0px;
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+  }
+
+nav ul li {
+    flex: 1 1 100%;
+}
+
+
+  nav ul li a {
+    background-color: #003249;
+    text-align: center;
+    padding: 0.75rem;
+    text-decoration: none;
+    font-family: 'Dosis', sans-serif;
+    font-size: 2em;
+    display: block;
+    color: #fff;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0px 0px 4px #222;
+}
+
+.paragraph{
+    font-family: 'Dosis', sans-serif;
+    margin: 8px;
+    text-align: left;
+    padding: 12px;
+}
+section{
+    width: 95%;
+    margin: auto;
+    background-color: #8B94A3;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding-top:20px;
+}
+
+label{
+    width: 60%;
+    display: grid;
+    margin: auto;
+    font-family: 'Dosis', sans-serif;
+}
+
+input{
+    height: 30px;
+    border-radius: 5px;
+}
+
+
+
+
+.welcome{
+display:flex;
+}
+.welcome img{
+    max-width: 32%;
+}
