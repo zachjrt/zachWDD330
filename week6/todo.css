@@ -21,11 +21,47 @@
     color: white;
 }
 
+
 .form{
     padding: 0px;
-   
     height: 40px;
     align-content: center;
     background-color: azure;
     border: none;
+}
+
+.nameOfTask{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+}
+.nameOfTask:hover{
+    background-color: rgb(35, 112, 112);
+    color: white;
+}
+.checkBoxTask{
+    flex: 1;
+    flex-shrink: 1;
+}
+.taskName{
+    flex-grow: 30;
+}
+.removeTask{
+    flex-shrink: 1;
+   flex: 1;
+    width: 30px;
+    height: 30px;
+}
+#listTodo{
+    min-height: 400px;
+    display: block;
+}
+#List{
+    margin-top: 10px;
+}
+input[type=checkbox]{
+  
+    width: 20px;
+    height: 20px;
 }

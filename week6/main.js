@@ -2,72 +2,156 @@
 
 
 class Task{
-    complete = false
-    name = ""
-    taskIndex = 0
 
-    constructor(complete, name, taskIndex){
+    constructor(content ="", taskIndex = Date.now(), complete = false){
         this.complete = complete
-        this. name = name
+        this.content  = content 
         this.taskIndex = taskIndex
     }
+    toggle(){
+        this.complete = !this.complete
+    }
+    
+    createElement(updateCallback, removeItemCallback) {
 
-   
+        let check = document.createElement('label');
+        check.classList.add('checkBoxTask');
+        let mark = document.createElement('span');
+
+        let element = document.createElement('div');
+        element.classList.add('nameOfTask');    
+
+        let checkbox = document.createElement('input');
+        checkbox.setAttribute('type', 'checkbox');
+
+        checkbox.addEventListener('click', (event) => {
+            this.toggle();
+            updateCallback();
+        });
+
+        this.complete ? checkbox.setAttribute('checked', 'true') : "";
+        
+        check.classList.add('checkmark');
+        check.appendChild(checkbox);
+        check.appendChild(mark);
+
+
+        let content  = document.createElement('div');
+        content.classList.add('taskName');
+        content.innerHTML = this.content;
+        let button = document.createElement('button');
+        button.classList.add("removeTask");
+        button.innerHTML = "<div>X</div>";
+        button.addEventListener('click', (event) => removeItemCallback(this));
+       
+        
+        element.appendChild(check);
+        element.appendChild(content);
+        element.appendChild(button);
+        return element;
+    }
     
 }
+
+class Storage {
+    constructor(storage = window.localStorage) {
+        this.storage = storage;
+    }
+    load(name) {
+        return this.storage.getItem(name);
+    }
+    save(name, info) {
+        this.storage.setItem(name, info);
+    }
+}
+
 
 class Handler{
+    constructor() {
+        this.listTodo = new TaskCreator();
+     }
 
-    display = document.getElementById("listTodo")
-    tasks = new Array()
-
-    addTask(taskName, complete = false){
-        let newTask = new Task(complete, taskName, `${this.tasks.length}`)
-    
-        this.tasks.push(newTask)
-    
+    Complete() {
+        this.todoList.renderList("Complete")
     }
-
-    removeTask(taskIndex){
-        for (let index in this.tasks) {
-            if (this.tasks[index].id == taskIndex) {
-                this.tasks.splice(index, 1)
-            }
-        }
+   
+    All() {
+        this.todoList.renderList("All")
     }
-
-   displayAllTasks(){
-       if (this.tasks.length > 0){
-           this.tasks.forEach((task) => {
-               let HTMLtasks = taskCreator.createHTML(task.complete, task.name, task.taskIndex)
-               this.display.appendChild(HTMLtasks)
-           })
-       }
-   }
+    Active() {
+        this.todoList.renderList("Active")
+    }
+    
+    addTask(){
+        let taskText = document.getElementById("newTaskName");
+        this.listTodo.add(taskText.value);
+        taskText.value =""
+    }
 }
 
-class taskCreator{
-    createHTML(complete, name, taskIndex){
-        let newTask = document.createElement("div")
-        newTask.id = id
-        newTask.classList.add("taskInList")
-        
+class TaskCreator{
+    constructor(name = 'todo') {
+        this.LocalStorage = new Storage();
+        this.name = name;
+        let temporarylist = JSON.parse(this.LocalStorage.load(this.name));
+        this.list = [];
+        temporarylist?.forEach(x => {
+            this.list.push(new Task(x.content,x.taskIndex,x.complete));
+        })
+        this.renderList();
+    }
 
-        let nameOfTask = document.createElement("div")
-        nameOfTask.textContent = name
-        nameOfTask.classList.add("nameOfTask")
+    Uncompleted() {
+        let count = 0;
+        this.list.forEach(x => count += x.complete ? 0 : 1);
+        return count;
+    }
 
-        let check = document.createElement("input")
-        check.classList.add("checkBoxTask")
-        check.type = "checkbox"
-        if(complete){
-            checkBox.checked = true
+    remove(task) {
+        const index = this.list.indexOf(task);
+        if (index > -1) {
+            this.list.splice(index, 1);
         }
-
-
-        newTask.appendChild(check)
-        newTask.appendChild(name)
-        return newTask
+        this.renderList();
+        this.save();
+    }
+    add(name) {
+        let task = new Task(name = name);
+        this.list.push(task);
+        document.getElementById('listTodo').appendChild(task.createElement(this.save.bind(this), this.remove.bind(this)));
+        this.save();
+    }
+    save() {
+        this.LocalStorage.save(this.name, JSON.stringify(this.list));
+        this.updateNum();
+    }
+  
+    renderList(filters){
+        let container = document.getElementById("listTodo");
+        container.textContent="";
+        if (this.list) {
+            this.list.forEach(x => {
+                switch (filters) {
+                    case "Active":
+                        if (!x.complete) container.appendChild(x.createElement(this.save.bind(this), this.remove.bind(this)));
+                        break;
+                    case "Complete":
+                        if (x.complete) container.appendChild(x.createElement(this.save.bind(this), this.remove.bind(this)));
+                        break;
+                    case "All":
+                        container.appendChild(x.createElement(this.save.bind(this), this.remove.bind(this)));
+                        break;
+                    default:
+                        container.appendChild(x.createElement(this.save.bind(this), this.remove.bind(this)));
+                        break;
+                }
+            });
+        }
+        this.updateNum();
+    }
+    updateNum() {
+        let numleft = this.Uncompleted();
+        document.getElementById('left').innerHTML = `<p>${numleft} tasks left</p>`;
     }
 }
 
@@ -80,13 +164,13 @@ let activeButton = document.getElementById("active")
 let completedButton = document.getElementById("completed")
 
 completedButton.addEventListener("click", () => {
-
+handler.Complete()
 })
 activeButton.addEventListener("click", () => {
-    
+handler.Active()
 })
 allButton.addEventListener("click", () => {
-    
+handler.All()
 })
 
 document.getElementById("addTask").addEventListener("click", () => {
@@ -96,7 +180,13 @@ document.getElementById("addTask").addEventListener("click", () => {
         return
     }
     
-    Handler.addTask(newTaskName)
-    Handler.displayAllTasks()
-    document.getElementById("List").appendChild(Handler.display)
+    console.log("Add task")
+    handler.addTask(newTaskName)
+   
+    
 })
+
+
+let handler = new Handler()
+//let taskCreator = new TaskCreator()
+//let storage = new Storage()
