@@ -53,7 +53,7 @@
 }
 .removeTask{
     flex-shrink: 1;
-   flex: 1;
+    flex: 1;
     width: 30px;
     height: 30px;
 }
