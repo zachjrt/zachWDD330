@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Week 7</title>
+        <link rel="stylesheet" href="../styles.css">
+        <script src="../js/menu.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
+        
+    </head>
+
+    <body onload="makeList()">
+        
+        <div class="main-container">
+            <h1>Week 7</h1>
+            <h2>Menu</h2>
+            <ol id="dynamicLinkList"></ol>
+
+            <h3>Script Exercise</h3>
+           
+            <p></p>
+            
+            <h3>Notes</h3>
+
+            <p>If a function takes some time to compute a return value, we can save the result in a cache property. Then if the same argument is used again later, we can return the value from the cache, rather than having to compute the result again.</p>
+            <p>An Immediately Invoked Function Expression – or IIFE – (pronounced 'iffy') is an anonymous function that, as the name suggests, is invoked as soon as it’s defined. This is easily achieved by placing parentheses at the end of the function definition (remember we use parentheses to invoke a function). </p>
+            <p>An IIFE can be used to set up any initialization code that there’ll be no need for again. Because the code is only run once, there’s no need to create any reusable, named functions, and all the variables will also be temporary. </p>
+            <p>In the last chapter we discussed using strict mode to avoid any sloppy coding practices. One of the problems with simply placing 'use strict' at the beginning of a file is that it will enforce strict mode on all the JavaScript in the file, and if you’re using other people’s code, there’s no guarantee that they’ve coded in strict mode.</p>
+            <p>think back to what Wayne used to do. It can be helpful to use to debug</p>
+            <p>If any properties have previously been set on the function, these will be lost when the function redefines itself. </p>
+            <p>A recursive function is one that invokes itself until a certain condition is met. It’s a useful tool to use when iterative processes are involved. A common example is a function that calculates the factorial of a number:</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            
+        </div>
+    </body>
+    
+    <footer>
+        <script>
+        
+        function loop(initial, check, update, result) {
+            for (let value = initial; check(value); value = update(value)) {
+                result(value);
+            }
+        }
+      
+        loop(3, n => n > 0, n => n - 1, console.log);
+
+
+          </script>
+    </footer>   
+    </html>
