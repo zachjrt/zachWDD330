@@ -20,7 +20,9 @@
 
             <h3>Script Exercise</h3>
            
-            <p></p>
+            <p>Check console, made the create own loop. 
+                Runs this: loop(3, n => n > 0, n => n - 1, console.log);
+        </p>
             
             <h3>Notes</h3>
 
@@ -31,7 +33,8 @@
             <p>think back to what Wayne used to do. It can be helpful to use to debug</p>
             <p>If any properties have previously been set on the function, these will be lost when the function redefines itself. </p>
             <p>A recursive function is one that invokes itself until a certain condition is met. It’s a useful tool to use when iterative processes are involved. A common example is a function that calculates the factorial of a number:</p>
-            <p></p>
+            <p>Ajax is a technique that allows web pages to communicate asynchronously with a server, and it dynamically updates web pages without reloading. </p>
+            <p>The use of Ajax revolutionized how websites worked, and ushered in a new age of web applications.</p>
             <p></p>
             <p></p>
             
@@ -41,7 +44,10 @@
     <footer>
         <script>
         
+        //Feel like this helped a bit with understanding for loops
         function loop(initial, check, update, result) {
+
+
             for (let value = initial; check(value); value = update(value)) {
                 result(value);
             }
