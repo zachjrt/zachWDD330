@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Week 7</title>
+        <link rel="stylesheet" href="../styles.css">
+        <script src="../js/menu.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
+        <style>
+            
+.container {
+    height: 25vmin;
+    width: 25vmin;
+    background-color: #9999ff;
+}
+.example {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+html,
+body {
+    height: 100%;
+}
+.container-one {
+    padding: 1vmin;
+}
+
+.orbiting-circle {
+    height: 25%;
+    width: 25%;
+    background-color: darkred;
+    border-radius: 50%;
+    animation: orbit 3s linear infinite;
+}
+
+.container-two {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.morphing-circle {
+    height: 25%;
+    width: 25%;
+    background-color: red;	
+}
+
+.morphing-circle {
+    height: 25%;
+    width: 25%;
+    background-color:darkred;	
+    border-radius: 50%;
+    animation: morphing-circle-square 3s linear infinite;
+    transition: border-radius .5s ease, 
+                background-color .5s ease, 
+                transform .5s ease .5s;
+}
+
+@keyframes morphing-circle-square {
+    0% {border-radius: 50%}
+    25% { /*(if you don't add both red and circle here it will start changing one or the other before you are ready) */
+        border-radius: 50%;
+        background-color: darkred;
+    }
+    50% { /* now change to white square...but don't start rotating yet! */
+        border-radius: 0%;
+        background-color: white;
+        transform: rotate(0deg);
+    }
+    75% { /* stay a white square, but rotate 90deg */
+        border-radius: 0%;
+        background-color: white;
+        transform: rotate(90deg);   
+    }
+    100% { /* stay rotated at 90, but change back to a circle */
+        border-radius: 50%;
+        background-color: darkred;
+        transform: rotate(90deg);
+    }
+}
+     
+
+@keyframes orbit {
+    0% { transform: translate(0,0); }
+    5% { transform: translate(0,0); } /* don't change for 5% of the time...pause */
+    25% { transform: translate(300%,0%); } /* start moving again */
+    30% { transform: translate(300%,0%); } /* pause */
+    50% { transform: translate(300%,300%); } /* move */
+    55% { transform: translate(300%,300%); }
+    75% { transform: translate(0%,300%); }
+    80% { transform: translate(0%,300%); }
+    100% { transform: translate(0%,0%); }
+}
+	
+.myCanvas {
+ border: dotted 2px black;
+}
+
+        </style>
+    </head>
+
+    <body onload="makeList()">
+        
+        <div class="main-container">
+            <h1>Week 7</h1>
+            <h2>Menu</h2>
+            <ol id="dynamicLinkList"></ol>
+
+            <h3>Exercise</h3>
+
+            <!--This was an old exercise I coded in the past, that I though fit well with the reading-->
+            <div class="example">
+            <div class="container container-one">
+                <div class="orbiting-circle"></div>
+            </div>
+            <div class="container container-two">
+              <div class="morphing-circle"></div>
+            </div>
+        </div>
+            <p>Important note: I did these two animations earlier, but I thought these examples worked very well with these notes and gave me a good live example</p>
+
+
+            <canvas id="myCanvas" class="myCanvas" width="200" height="200">
+                Sorry! Your browser doesn’t support Canvas.
+            </canvas>
+            <p>This one is new</p>
+
+            <h3>Notes</h3>
+
+            <p>The skew(x,y) function specifies a skew along the x and y axes. As you’d expect,the x specifies the skew on the x axis, and the y specifies the skew on the y axis.</p>
+            <p>Animation has certainly been possible for some time with JavaScript, but native
+                CSS transitions generallyrequire less client-side processing, sothey’ll usuallyappear
+                smoother.</p>
+            <p>The transition-property property defines the CSS properties of the element that
+                should be transitioned, with all for all properties being the default.</p>
+            <p>The transition-duration property sets how long the transition will take: the
+                duration of time it takes to go from the default state to the transitioned state.</p>
+            <p>You can also describe your timing function more precisely by defining your own
+                cubic-bezier function. It accepts four numeric parameters; for example, linear is
+                the same as cubic-bezier(0, 0, 1, 1). </p>
+            <p>Finally, by using the transition-delay property, it’s possible to introduce a delay
+                before the transition begins. </p>
+            <p>How do we know when a transition has ended? A transitionend event—prefixed
+                and camel-cased as webkitTransitionEnd forolder mobilebrowsers—is fired upon
+                completion of a CSS transition in both directions.</p>
+            <p>The lack of powerful processors on many mobile devices makes CSS animations a
+                great alternative to weighty, CPU-intensive JavaScript animation. </p>
+            <p>Canvas was first developed by Apple. Since they already had a framework—Quartz
+                2D—for drawing in two-dimensional space, they went ahead and based many of
+                the conceptsof what woud come tobeknown as HTML5’s canvas on that framework.
+                </p>
+            <p>With HTML5’s Canvas API, we can draw anything we can imagine, all through
+                JavaScript. This can improve the performance of our websites by avoiding the need
+                to download images off the network.</p>
+            <p>We can also create a CanvasGradient object to use as our fillStyle.</p>
+            <p></p>
+            <h3>Questions</h3>
+            <h4>I imagine that css animations run faster than canvas based off of the reading. If that is the case, would there be a scenario where you might want to use Canvas over CSS animations if its something as simple as moving a square?</h4>
+            
+        </div>
+    </body>
+    
+    <footer>
+        <script>
+        
+var canvas = document.getElementById("myCanvas"); 
+var context = canvas.getContext("2d"); 
+context.strokeStyle = "red";
+context.fillStyle = "rgba(0, 0, 255, 0.5)";
+context.fillRect(10, 10, 100, 100); 
+context.strokeRect(10, 10, 100, 100);
+
+          </script>
+    </footer>   
+    </html>
