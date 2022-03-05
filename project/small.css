@@ -1,0 +1,57 @@
+
+@media only screen and (max-width: 959px){
+    
+    
+h3{
+    width: 100%;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+section{
+    width: 100%;
+}
+
+section p{
+    font-size: 1.5rem;
+    padding: 20px;
+}
+#weather{
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    background-color: black;
+    border-radius: 15px;
+    text-align: center;
+    /* width: 90px; */
+    height: 0px;
+}
+#weather h4{
+    margin-top: 0%;
+}
+
+.floating-menu {
+    font-family: sans-serif;
+    padding: 5px;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+  }
+  nav ul li a {
+    
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    
+
+}
+
+h1{
+    padding: 0;
+    
+}
+
+
+}
