@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+        <title>Local Quakes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+
+    <body>
+        <main>
+            <h1>Quake List</h1>
+            <ul id="quakeList" ></ul>
+        </main>
+    </body>
+
+    <script>
+        import { getJSON, getLocation } from 'utilities.js'
+        const baseUrl ='https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2019-01-01&endtime=2019-02-02';
+
+        const url = getLocation(baseUrl)
+        getJSON(url)
+
+    </script>
+
+</html>
+        
