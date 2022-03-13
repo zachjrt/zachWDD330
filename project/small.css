@@ -73,4 +73,7 @@ h1{
   }
 
 
+  .mobileSpace{
+    display: block;
+}
 }

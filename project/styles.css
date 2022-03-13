@@ -253,11 +253,27 @@ input{
 }
 
 
-
+img{
+    margin: 10px;
+}
 
 .welcome{
 display:flex;
 }
 .welcome img{
     max-width: 32%;
+    height: fit-content;
+}
+
+.mobileSpace{
+    display: none;
+}
+
+footer p {
+    text-align: center;
+    margin: 10px;
+}
+footer div{
+    width: 33%;
+    display: grid;
 }
