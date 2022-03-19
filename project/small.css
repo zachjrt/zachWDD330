@@ -37,6 +37,9 @@ section p{
     font-size: .8rem;
     flex: 1 1 100%;
 }
+#weather:hover{
+    opacity: .3;
+}
 
 .floating-menu {
     font-family: sans-serif;
