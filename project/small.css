@@ -38,7 +38,7 @@ section p{
     flex: 1 1 100%;
 }
 #weather:hover{
-    opacity: .3;
+    opacity: .1;
 }
 
 .floating-menu {
