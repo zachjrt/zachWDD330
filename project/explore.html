@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/weather.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/planets.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Supermercado+One&display=swap" rel="stylesheet">
@@ -39,8 +40,8 @@
         <div class="floating-menu">
         <nav>
             <ul>
-                <li id="home"><a class="active" href="index.html">Home</a></li>
-                <li><a href="explore.html">Explore</a></li>
+                <li id="home"><a href="index.html">Home</a></li>
+                <li><a class="active" href="explore.html">Explore</a></li>
                 <li><a onclick="document.getElementById('signup').style.display='block'">Join</a></li>
                
             
@@ -85,21 +86,31 @@
                 </form>
               </div>
     
-            <h3>Space is a great place</h3>
-    <section class="welcome">
-    <p>Welcome to the place to learn about space. We aim to help you learn more about space. Our website grabs information from a large database about planets and displays it for you in an easy to understand way. We love space and hope that you will come to love it too.</p>
-    <img src="/project/img/moon.jpg">
-    </section>
-    
-    
-  
 
-    <h3>Join Us</h3>
-    <section class="featuredEvents">
-    <img style="width: 50%; height: fit-content;"src="/project/img/galaxy.jpg">
-    <p>Join</p>
+
+            <h3>Planet Fact</h3>
+    <section class="welcome">
+        <table id="planetlist">
+            <thead>
+              <tr>
+                <th>English Name</th>
+                <th>Name</th>
+                <th>Temp</th>
+                <th>Mass</th>
+                <th>Is Planet</th>
+                <th>Gravity</th>
+                <th>density</th>
+                <th>mean</th>
+                <th>Radius</th>
+              </tr>
+            </thead>
+  
+            <tbody></tbody>
+          </table>
     </section>
     
+    
+
 
     
     

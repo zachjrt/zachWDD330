@@ -151,6 +151,18 @@ h3{
     border-top-right-radius: 15px;
     box-shadow: 0px -7px 9px rgba(45, 45, 45, 0.5)
 }
+
+h4{
+    color: #fff;
+    background-color: #0c4c69;
+    width: 100%;
+    margin:auto;
+    margin-top: 20px;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px -7px 9px rgba(45, 45, 45, 0.5)
+}
 footer{
     color: #fff;
     background-color: #19586e;
@@ -240,17 +252,8 @@ section{
     padding-top:20px;
 }
 
-label{
-    width: 60%;
-    display: grid;
-    margin: auto;
-    font-family: 'Dosis', sans-serif;
-}
 
-input{
-    height: 30px;
-    border-radius: 5px;
-}
+
 
 
 img{
@@ -277,3 +280,133 @@ footer div{
     width: 33%;
     display: grid;
 }
+#planetlist{
+    margin: auto;
+    width: 80%;
+    background: rgb(87, 98, 107);
+}
+#planetlist thead tr{
+   color: #fff;
+   margin: auto;
+   text-align: center;
+}
+#planetlist tbody tr:nth-child(2n){
+    
+    background: rgb(228, 232, 235);
+}
+#planetlist tbody tr:nth-child(2n+1){
+    background: rgb(213, 220, 226);
+    
+}
+
+/*Join Form*/
+input[type=text] {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 5px 0 20px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 5px;
+  }
+   input:invalid:required {
+    background-color: rgb(230, 211, 211);
+    border-radius: 10px;
+   }
+              
+   input:invalid {
+     border: 3px solid rgb(231, 159, 159);
+     border-radius: 10px;
+  }
+  
+  
+  input[type=text]:focus{
+    background-color: #333;
+    color: #fff;
+    outline: none;
+  }
+  
+  
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  button:hover {
+    opacity:1;
+  }
+  
+  
+  .cancel {
+    padding: 14px 20px;
+    background-color: #f54136;
+  }
+  
+  
+  .cancel, .signup {
+    float: left;
+    width: 50%;
+    border-radius: 10px;
+  }
+  
+  
+  .popupContainer {
+    padding: 16px;
+  }
+  
+  
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(90,90,90,.7);
+    padding-top: 80px;
+  }
+  
+  .popup-content {
+    background-color: #444;
+    color: #fff;
+    margin: 5% auto 15% auto; 
+    border: 1px solid #888;
+    width: 80%; 
+    border-radius: 10px;
+  }
+  
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+   
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #f24131;
+    cursor: pointer;
+    
+  }
+  
+  .clear::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
