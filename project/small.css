@@ -72,7 +72,7 @@ h1{
     display: flex;
     padding: 0px;
     top: -80px;
-    left: -40px;
+    left: 40px;
     width: 100%;
     z-index: 100;
     position: fixed;
