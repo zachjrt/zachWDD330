@@ -48,6 +48,7 @@ section p{
     width: 100%;
     z-index: 100;
     position: fixed;
+    background-image: linear-gradient(rgba(0,0,0,0), #003249, rgba(0,0,0,0));
   }
   nav ul li a {
     border-top-right-radius: 10px;
@@ -86,6 +87,11 @@ h1{
   
     
   }
+
+nav ul li:hover {
+    transform: translateY(3px);
+    transition: transform .2s ease-out;
+}
  
 
 }
