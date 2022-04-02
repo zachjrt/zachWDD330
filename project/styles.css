@@ -222,6 +222,12 @@ nav ul li {
     flex: 1 1 100%;
 }
 
+nav ul li:hover {
+    transform: translateY(3px);
+    transition: transform .2s ease-out;
+}
+
+
 
   nav ul li a {
     background-color: #003249;
@@ -283,7 +289,7 @@ footer div{
 #planetlist{
     margin: auto;
     width: 80%;
-    background: rgb(87, 98, 107);
+    
 }
 #planetlist thead tr{
    color: #fff;
@@ -409,4 +415,45 @@ input[type=text] {
     content: "";
     clear: both;
     display: table;
+  }
+
+
+  .collapsible {
+    
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 30px;
+    margin: 0%;
+    background-color: #888;
+    
+    
+  }
+
+  .active {
+    background-color: #0c4c69;
+  
+  }
+  .collapsible:hover {
+    background-color: #0c4c69;
+    transform: translateY(-3px);
+    transition: transform .2s ease-out;
+    border-radius: 10px;
+  }
+  
+  .colllapsibleContent {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #333
+  }
+
+  .colllapsibleContent p {
+    margin: 0;
+    color: white;
+    line-height: .5;
   }

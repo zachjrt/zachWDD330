@@ -35,7 +35,7 @@ function randomPlanet(results, planetListElement){
 
 
 function renderRandomPlanet(planet, planetListElement) {
-    const list = planetListElement.children[1];
+    const list = planetListElement.children[0];
     list.innerHTML = "";
       let listItem = document.createElement("tr");
       listItem.innerHTML = `
@@ -58,24 +58,43 @@ function renderPlanetList(planets, planetListElement) {
     const list = planetListElement.children[1];
     list.innerHTML = "";
     planets.forEach(function (planet) {
-      let listItem = document.createElement("tr");
-      listItem.innerHTML = `
-          <td>${planet.englishName}</td>
-          <td>${planet.name}</td>
-          <td>${planet.avgTemp}</td>
-          <td>${planet.mass.massValue}</td>
-          <td>${planet.isPlanet}</td>
-          <td>${planet.gravity}</td>
-          <td>${planet.density}</td>
-          <td>${planet.meanRadius}</td>
-          <td>${planet.meanRadius}</td>
-          `;
-  
-  
+        let listItem = document.createElement("button");
+        listItem.className="collapsible"
+        listItem.type="button"
+        listItem.innerHTML = `
+            ${planet.englishName}
+            `;
+        listItem.addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+        let listContent = document.createElement("div");
+        listContent.className="colllapsibleContent"
+        listContent.innerHTML = `
+            <p> Name: ${planet.name}</p>
+            <p> Temperature: ${planet.avgTemp}</p>
+            <p> Mass: ${planet.mass.massValue}</p>
+            <p> Planet: ${planet.isPlanet}</p>
+            <p> Gravity: ${planet.gravity}</p>
+            <p> Density: ${planet.density}</p>
+            <p> Radius: ${planet.meanRadius}</p>
+            `;
+        
+       
       list.appendChild(listItem);
+      list.appendChild(listContent);
     });
   }
 
+  
+
+
 
   getData();
+
  
