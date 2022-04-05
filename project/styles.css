@@ -460,3 +460,7 @@ input[type=text] {
     color: white;
     line-height: .5;
   }
+
+  #signup p{
+    font-size: 1em;
+  }
